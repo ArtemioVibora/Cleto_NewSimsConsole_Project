@@ -7,6 +7,8 @@ public class App {
     public static InputStreamReader inputStreamReader = new InputStreamReader(System.in);
     public static BufferedReader reader = new BufferedReader(inputStreamReader);
 
+    public static Display display = new Display();
+
     public void run()
     {
         boolean flagRun = true;
@@ -16,10 +18,26 @@ public class App {
         {
             try
             {
+                display.MenuOptions();
                 input = Integer.parseInt(reader.readLine());
+
+                switch(input)
+                {
+                    case 1:
+                        System.out.println("Character has been created");
+                        Thread.sleep(750);
+                        break;
+                    case 9:
+                        flagRun = false;
+                        break;
+                }
 
             }
             catch (IOException ioe)
+            {
+
+            }
+            catch (InterruptedException ie)
             {
 
             }
